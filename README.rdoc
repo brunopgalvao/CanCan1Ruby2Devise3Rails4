@@ -1,5 +1,5 @@
 == README
-reate a new app:
+create a new app:
 rails new app
 bundle install
  

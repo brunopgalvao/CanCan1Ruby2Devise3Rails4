@@ -1,20 +1,23 @@
-== README
-Create a new app:
+#README
+######Create a new app:
 ```ruby
 rails new app
 bundle install
 ```
-Install Devise:
-Add gem 'devise' to Gemfile
+######Install Devise:
 ```ruby
+gem 'devise'
 bundle install
 ```
 ```ruby
 rails generate devise:install
 rails generate devise user
 ```
-Install CanCan:
-Add gem 'cancan' to Gemfile
+######Install CanCan:
+```ruby
+gem 'cancan'
+bundle install
+```
 ```ruby
 rails generate cancan:ability
 ```
@@ -24,9 +27,9 @@ rails generate model role name:string
 ```ruby
 rails generate migration UsersHaveAndBelongToManyRoles
 ```
-Edit the migration 
+######Edit the migration 
 ```ruby
-class UsersHaveAndBelongToManyRoles &lt; ActiveRecord::Migration 
+class UsersHaveAndBelongToManyRoles < ActiveRecord::Migration 
   def self up 
     create_table :roles_users , :id =&gt; false do | t | 
       t. references :role , :user 
@@ -41,21 +44,21 @@ end
 ```ruby
 rake db:migrate
 ```
-Edit User model 
+######Edit User model 
 ```ruby
-class User &lt; ActiveRecord::Base 
+class User < ActiveRecord::Base 
   has_and_belongs_to_many :roles 
   def role? ( role ) 
     return !! self roles find_by_name ( role. to_s camelize ) 
   end 
 ```
-Edit Role model 
+######Edit Role model 
 ```ruby
-class Role &lt; ActiveRecord::Base 
+class Role < ActiveRecord::Base 
   has_and_belongs_to_many :users 
 end 
 ```
-Edit Ability model 
+######Edit Ability model 
 ```ruby
 class Ability
   include CanCan::Ability 
@@ -81,26 +84,26 @@ class Ability
 end 
 ```
 ```
-mkdir app / controllers / users
-vi app / controllers / users / registrations_controller. rb 
+mkdir app/controllers/users
+vi app /controllers/users/registrations_controller. rb 
 ```
-Edit RegistrationsController 
+######Edit RegistrationsController 
 ```ruby
 class Users::RegistrationsController &lt; Devise::RegistrationsController 
-  before_filter :check_permissions , :only =&gt; [ : new , :create , :cancel ] 
+  before_filter :check_permissions , :only => [ : new , :create , :cancel ] 
   skip_before_filter :require_no_authentication 
   def check_permissions
     authorize! :create , resource
   end 
 end 
 ```
-Edit config/routes.rb and replace devise_for :users with: 
+######Edit ```config/routes.rb``` and replace devise_for :users with: 
 ```ruby
-devise_for :users , :controllers =&gt; { :registrations =&gt; "users/registrations" } 
+devise_for :users , :controllers => { :registrations => "users/registrations" } 
 ```
-Edit ApplicationController 
+######Edit ApplicationController 
 ```ruby
-class ApplicationController &lt; ActionController::Base 
+class ApplicationController < ActionController::Base 
   ...
   rescue_from CanCan::AccessDenied do | exception | 
     flash [ :error ] = exception. message 
@@ -109,8 +112,8 @@ class ApplicationController &lt; ActionController::Base
   ...
 end 
 ```
-Add WelcomeController 
+######Add WelcomeController 
 ```ruby
 rails generate controller welcome index
 ```
-Navigating to / users / sign_up will now redirect you to welcome #index
+######Navigating to ```/users/sign_up``` will now redirect you to welcome #index

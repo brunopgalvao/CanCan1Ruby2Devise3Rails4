@@ -1,4 +1,5 @@
 #README
+
 ######Create a new app:
 ```ruby
 rails new app
@@ -117,3 +118,5 @@ end
 rails generate controller welcome index
 ```
 ######Navigating to ```/users/sign_up``` will now redirect you to welcome #index
+
+######Resources: http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers

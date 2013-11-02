@@ -1,4 +1,4 @@
-#README
+##Setting up CanCan 1 : Ruby 2 : Devise 3 : Rails 4
 
 ######Create a new app:
 ```ruby

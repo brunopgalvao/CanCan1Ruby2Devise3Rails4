@@ -1,4 +1,5 @@
 ##Setting up CanCan 1 : Ruby 2 : Devise 3 : Rails 4
+##### This guide was created partially following Tony Amoyal's tutorial [here.] (http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers)
 
 ######Create a new app:
 ```ruby
@@ -32,7 +33,7 @@ rails generate migration UsersHaveAndBelongToManyRoles
 ```ruby
 class UsersHaveAndBelongToManyRoles < ActiveRecord::Migration 
   def self up 
-    create_table :roles_users , :id =&gt; false do | t | 
+    create_table :roles_users , :id => false do | t | 
       t. references :role , :user 
     end 
   end 
@@ -90,7 +91,7 @@ vi app /controllers/users/registrations_controller. rb
 ```
 ######Edit RegistrationsController 
 ```ruby
-class Users::RegistrationsController &lt; Devise::RegistrationsController 
+class Users::RegistrationsController < Devise::RegistrationsController 
   before_filter :check_permissions , :only => [ : new , :create , :cancel ] 
   skip_before_filter :require_no_authentication 
   def check_permissions
@@ -115,7 +116,7 @@ end
 ```
 ######Add WelcomeController 
 ```ruby
-rails generate controller welcome index
+rails generate controller welcome#index
 ```
 ######Navigating to ```/users/sign_up``` will now redirect you to welcome #index
 

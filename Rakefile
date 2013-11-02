@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Joiiy::Application.load_tasks
+CanCan1Ruby2Devise3Rails4::Application.load_tasks

@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
-Joiiy::Application.initialize!
+CanCan1Ruby2Devise3Rails4::Application.initialize!

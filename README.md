@@ -1,3 +1,4 @@
+
 [![Build Status](https://travis-ci.org/brunopgalvao/CanCan1Ruby2Devise3Rails4.png?branch=master)](https://travis-ci.org/brunopgalvao/CanCan1Ruby2Devise3Rails4)
 [![Code Climate](https://codeclimate.com/github/brunopgalvao/CanCan1Ruby2Devise3Rails4.png)](https://codeclimate.com/github/brunopgalvao/CanCan1Ruby2Devise3Rails4)
 

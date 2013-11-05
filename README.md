@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/brunopgalvao/CanCan1Ruby2Devise3Rails4.png)](https://codeclimate.com/github/brunopgalvao/CanCan1Ruby2Devise3Rails4)
 ##Setting up CanCan 1 : Ruby 2 : Devise 3 : Rails 4
 ##### This guide was created partially following Tony Amoyal's tutorial [here.] (http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers)
 

@@ -70,7 +70,7 @@ end
 class Ability
   include CanCan::Ability 
 
-  def initialize(user) 
+  def initialize( user ) 
     user ||= User.new                          # guest user 
 
     if user.role :super_admin 
@@ -92,7 +92,7 @@ end
 ```
 ```
 mkdir app/controllers/users
-vi app /controllers/users/registrations_controller. rb 
+vi app/controllers/users/registrations_controller.rb 
 ```
 ######Edit RegistrationsController 
 ```ruby
